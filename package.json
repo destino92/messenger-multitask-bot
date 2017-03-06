@@ -1,0 +1,29 @@
+{
+  "name": "multitask-bot",
+  "version": "1.0.0",
+  "description": "a messenger bot that should be an assistante and should be able to do more than one task",
+  "main": "webhook.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/destino92/messenger-multitask-bot.git"
+  },
+  "keywords": [
+    "messenger",
+    "bot",
+    "apiai",
+    "facebook"
+  ],
+  "author": "Destino Dello",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/destino92/messenger-multitask-bot/issues"
+  },
+  "homepage": "https://github.com/destino92/messenger-multitask-bot#readme",
+  "devDependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2"
+  }
+}
