@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
@@ -10,10 +12,14 @@ const server = app.listen(process.env.PORT || 5000, () => {
   console.log('Express server listening on port %d in %s mode', server.address().port, app.settings.env);
 });
 
-const PAGE_ACCESS_TOKEN = (process.env.PAGE_ACCESS_TOKEN);
+const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
+
+app.get('/', function (req, res) {
+    res.send('Hello world, I am a chat bot')
+})
 
 /* For Facebook Validation */
-app.get('/webhook', (req, res) => {
+app.get('/webhook/', (req, res) => {
   if (req.query['hub.mode'] === 'subscribe' && req.query['hub.verify_token'] === 'haji_no_moto') {
     res.status(200).send(req.query['hub.challenge']);
   } else {
