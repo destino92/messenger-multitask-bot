@@ -12,7 +12,7 @@ const server = app.listen(process.env.PORT || 5000, () => {
 
 /* For Facebook Validation */
 app.get('/webhook', (req, res) => {
-  if (req.query['hub.mode'] === 'subscribe' && req.query['hub.verify_token'] === 'haji_no_moto') {
+  if (req.query['hub.mode'] && req.query['hub.verify_token'] === 'haji_no_moto') {
     res.status(200).send(req.query['hub.challenge']);
   } else {
     res.status(403).end();
@@ -49,7 +49,7 @@ function sendMessage(event) {
     }
   }, function(error, response) {
     if (error) {
-
+      console.log('Error sending message: ', error);
     } else if (response.body.error) {
       console.log('Error: ', response.body.error);
     }
