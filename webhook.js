@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 
 /* For Facebook Validation */
 app.get('/webhook/', (req, res) => {
-  if (req.query['hub.mode'] === 'subscribe' && req.query['hub.verify_token'] === 'haji_no_moto') {
+  if (req.query['hub.verify_token'] === 'haji_no_moto') {
     console.log("Validating webhook");
     res.status(200).send(req.query['hub.challenge']);
   } else {
